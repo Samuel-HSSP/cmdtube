@@ -7,15 +7,11 @@ who watches YouTube videos to become better.
 
 
 ## Table of Contents
-##### 1. Installation
-##### 2. Features
-##### 3. Usage
-          3.1. Watch YouTube Videos
-          3.2. Get Information about a YouTube Video
-          3.3. Search YouTube Videos
-          3.4. Download YouTube Videos and Playlists
-##### 4. To-Do
-##### 5. Other Libraries
+- [Installation](https://github.com/Samuel-HSSP/cmdtube/blob/main/cmdtube/README.md#installation)
+- [Features](https://github.com/Samuel-HSSP/cmdtube/blob/main/cmdtube/README.md#features)
+- [Usage](https://github.com/Samuel-HSSP/cmdtube/blob/main/cmdtube/README.md#usage)
+- [To-Do](https://github.com/Samuel-HSSP/cmdtube/blob/main/cmdtube/README.md#to-do)
+- [Other Libraries](https://github.com/Samuel-HSSP/cmdtube/blob/main/cmdtube/README.md#other-libraries)
 
 
 ## Installation
