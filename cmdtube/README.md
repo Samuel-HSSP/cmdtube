@@ -6,6 +6,18 @@ This library was made with programmers in mind and it's dedicated to every progr
 who watches YouTube videos to become better.
 
 
+## Table of Contents
+##### 1. Installation
+##### 2. Features
+##### 3. Usage
+          3.1. Watch YouTube Videos
+          3.2. Get Information about a YouTube Video
+          3.3. Search YouTube Videos
+          3.4. Download YouTube Videos and Playlists
+##### 4. To-Do
+##### 5. Other Libraries
+
+
 ## Installation
 Use pip/pip3 to install from PyPI
 ```
@@ -25,8 +37,11 @@ $ python -m pip install cmdtube
 5. Get information about a YouTube video
 6. Download a YouTube video as an audio
 
+## Usage
+With CmdTube, you can download any YouTube programming tutorial you want, over a few commands.
+The following section of the documentation is to guide you on how to use CmdTube.
 
-## Watch YouTube Videos
+### Watch YouTube Videos
 To watch a YouTube video from your default web browser, use the following syntax:
 ```
 Usage: cmdtube [-w WATCH_URL]
@@ -37,7 +52,7 @@ Positional argument:
 ```
 
 
-## Get Information about a YouTube Video
+### Get Information about a YouTube Video
 To get information about a YouTube video, use the syntax given below.
 This command returns the following information:
 1. Title
@@ -57,7 +72,7 @@ Positional argument:
 ```
 
 
-## Search YouTube Videos
+### Search YouTube Videos
 To search YouTube for videos, use the following syntax:
 ```
 Usage: cmdtube [-s SEARCH_QUERY] [-r RESULTS]
@@ -134,7 +149,7 @@ Optional arguments:
 ```
 
 
-## Download YouTube Videos and Playlists
+### Download YouTube Videos and Playlists
 To download a YouTube video or playlist into the current working directory, follow the syntax below:
 ```
 Usage: cmdtube [-d DOWNLOAD] [-t TYPE] [-f FORMAT] [-res RESOLUTION]
@@ -170,7 +185,7 @@ Positional arguments:
 ```
 
 
-## To-Do
+### To-Do
 - [ ] Download files to specified paths
 - [ ] Show progress bars for videos downloading
 - [ ] Show more information about commands
@@ -182,7 +197,7 @@ Positional arguments:
 - [ ] Fix all the bugs, and probably add more
 
 
-## Other Libraries
+### Other Libraries
 [PyTube](https://pypi.org/project/pytube/) - Python 3 library for downloading YouTube Videos.
 #### Installation
 ```
