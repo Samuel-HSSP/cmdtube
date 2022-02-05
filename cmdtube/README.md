@@ -1,5 +1,6 @@
 # CmdTube
 ![CmdTube Logo](https://i.ibb.co/DGjDpph/cmdtubelogo.png)
+
 CmdTube is a Python CLI library for searching, downloading, and watching YouTube tutorials.
 This library was made with programmers in mind and it's dedicated to every programmer
 who watches YouTube videos to become better.
@@ -36,7 +37,7 @@ Positional argument:
 ```
 
 
-## Getting Information about a YouTube Video
+## Get Information about a YouTube Video
 To get information about a YouTube video, use the syntax given below.
 This command returns the following information:
 1. Title
