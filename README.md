@@ -194,10 +194,10 @@ Positional arguments:
 
 
 ### Other Libraries
-[PyTube](https://pypi.org/project/pytube/) - Python 3 library for downloading YouTube Videos.
+[PyTube3](https://pypi.org/project/pytube3/) - Python 3 library for downloading YouTube Videos.
 #### Installation
 ```
-pip install pytube
+pip install pytube3
 ```
 [YoutubeSearch](https://pypi.org/project/youtube-search/) - Perform YouTube video searches without the API
 #### Installation
