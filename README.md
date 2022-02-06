@@ -7,11 +7,11 @@ who watches YouTube videos to become better.
 
 
 ## Table of Contents
-- [Installation](https://github.com/Samuel-HSSP/cmdtube/blob/main/cmdtube/README.md#installation)
-- [Features](https://github.com/Samuel-HSSP/cmdtube/blob/main/cmdtube/README.md#features)
-- [Usage](https://github.com/Samuel-HSSP/cmdtube/blob/main/cmdtube/README.md#usage)
-- [To-Do](https://github.com/Samuel-HSSP/cmdtube/blob/main/cmdtube/README.md#to-do)
-- [Other Libraries](https://github.com/Samuel-HSSP/cmdtube/blob/main/cmdtube/README.md#other-libraries)
+- [Installation](https://github.com/Samuel-HSSP/cmdtube/blob/main/README.md#installation)
+- [Features](https://github.com/Samuel-HSSP/cmdtube/blob/main/README.md#features)
+- [Usage](https://github.com/Samuel-HSSP/cmdtube/blob/main/README.md#usage)
+- [To-Do](https://github.com/Samuel-HSSP/cmdtube/blob/main/README.md#to-do)
+- [Other Libraries](https://github.com/Samuel-HSSP/cmdtube/blob/main/README.md#other-libraries)
 
 
 ## Installation
