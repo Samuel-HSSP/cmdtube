@@ -23,6 +23,10 @@ You can also use Python from your command prompt
 ```
 $ python -m pip install cmdtube
 ```
+Lastly, to install from GitHub (ensuring that Git has been added to PATH), do:
+```
+$ python -m pip install git+https://www.github.com/Samuel-HSSP/cmdtube
+```
 
 
 ## Features
@@ -36,17 +40,13 @@ $ python -m pip install cmdtube
 ## Usage
 With CmdTube, you can download any YouTube programming tutorial you want, over a few commands.
 The following section of the documentation is to guide you on how to use CmdTube.
-
-### Watch YouTube Videos
-To watch a YouTube video from your default web browser, use the following syntax:
+Here is how you should initialize cmdtube:
+```python
+>>> from cmdtube import cmdtube
+...
+# To search YouTube for 'How to debug without Stack Overflow'
+CMDTube> cmdtube -search How to debug without Stack Overflow
 ```
-Usage: cmdtube [-w WATCH_URL]
-
-Positional argument:
-  -s WATCH_URL, -watch WATCH_URL
-                        open YouTube video url (WATCH) in default browser
-```
-
 
 ### Get Information about a YouTube Video
 To get information about a YouTube video, use the syntax given below.
@@ -92,7 +92,7 @@ Positional arguments:
   -w WATCH, -watch WATCH
                         the index of the video to watch, from the displayed
                         search result. It should not be more than the total
-                        number of videos from the search result.
+                        number of videos from the search results.
                         To watch the first video, use 1.
 Optional arguments:
   -r RESULTS, --results RESULTS
@@ -110,8 +110,8 @@ Positional arguments:
                         search YouTube for desired query
   -d DOWNLOAD, -download DOWNLOAD
                         the index of the video to download, from the displayed
-                        search result. It should not be more than the total
-                        number of videos from the search result.
+                        search results. It should not be more than the total
+                        number of videos from the search results.
                         To download the first video, use 1.
                         Note that it will always download the highest resolution
                         of the video. More functionalities will be added later.
@@ -129,10 +129,10 @@ Usage: cmdtube [-s SEARCH_QUERY] [-r RESULTS] | cmdtube [-i INFO]
 Positional arguments:
   -s SEARCH_QUERY, -search SEARCH_QUERY
                         search YouTube for desired query
-  -d INFO, -info INFO
+  -i INFO, -info INFO
                         the index of the video from the displayed
-                        search result. It should not be more than the total
-                        number of videos from the search result.
+                        search results. It should not be more than the total
+                        number of videos from the search results.
                         To get information about the second video shown in the
                         search result, use 2.
 
@@ -190,14 +190,15 @@ Positional arguments:
 - [ ] Save command output to text file
 - [ ] Download captions for videos
 - [ ] Add support for more video and audio formats
+- [ ] Proper organization of code files
 - [ ] Fix all the bugs, and probably add more
 
 
 ### Other Libraries
-[PyTube3](https://pypi.org/project/pytube3/) - Python 3 library for downloading YouTube Videos.
+[PyTube](https://pypi.org/project/pytube/) - Python 3 library for downloading YouTube Videos.
 #### Installation
 ```
-pip install pytube3
+pip install pytube
 ```
 [YoutubeSearch](https://pypi.org/project/youtube-search/) - Perform YouTube video searches without the API
 #### Installation
