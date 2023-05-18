@@ -4,6 +4,7 @@
 CmdTube is a Python CLI library for searching, downloading, and watching YouTube tutorials.
 This library was made with programmers in mind and it's dedicated to every programmer
 who watches YouTube videos to become better.
+Please visit [here](https://github.com/SamuelHSSP/cmdtube) for a better documentation.
 
 
 ## Table of Contents
