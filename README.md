@@ -208,16 +208,16 @@ CMDTube> cmdtube -t "https://www.youtube.com/watch?v=_nbVTUYVKxg" -l "fr" --show
 
 
 ### To-Do
-- [*] Download files to specified paths
-- [*] Show progress bars for videos downloading
-- [*] Show more information about commands
-- [*] Proper documentation
+- [x] Download files to specified paths
+- [x] Show progress bars for videos downloading
+- [x] Show more information about commands
+- [x] Proper documentation
 - [ ] Command to show full/minimal information about a video
 - [ ] Save command output to text file
-- [*] Download captions for videos
+- [x] Download captions for videos
 - [ ] Add support for more video and audio formats
-- [*] Proper organization of code files
-- [*] Fix all the bugs, and probably add more
+- [x] Proper organization of code files
+- [x] Fix all the bugs, and probably add more
 
 
 ### Other Libraries
