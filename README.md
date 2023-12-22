@@ -231,7 +231,7 @@ pip install pytube
 ```
 pip install youtube-search
 ```
-[YoutubeSearch](https://pypi.org/project/youtube-transcript-api/) - Get transcripts for YouTube videos
+[YoutubeTranscriptAPI](https://pypi.org/project/youtube-transcript-api/) - Get transcripts for YouTube videos
 #### Installation
 ```
 pip install youtube-transcript-api
