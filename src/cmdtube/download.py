@@ -17,7 +17,7 @@ class Download:
         parser.add_argument("-d", "--download", type=self.url_or_number, help="The index of the video from the list of search results OR the URL of the video")
         parser.add_argument("-t", "--type", type=str, help="Whether it's a 'video' or 'playlist'.")
         parser.add_argument("-p", "--path", type=str, help="The path or directory where the video should be saved")
-        parser.add_argument("-res", "--resolution", type=str, help="The resolution of the video(s) to download. Could be one of ('360p', '480p', '720p', '1080p', 'highest', 'lowest')")
+        parser.add_argument("-res", "--resolution", type=str, help="The resolution of the video(s) to download. Could be one of ('144p', '240p', '360p', '480p', '720p', '1080p', 'highest', 'lowest')")
         parser.add_argument("--audio", action='store_const', const=True, default=False, help="This flag, if set, downloads the YouTube video or playlist as an MP3 audio")
 
         args = parser.parse_args(shlex.split(self.query))
@@ -63,14 +63,12 @@ class Download:
                 print(termcolor.colored(f"Audio file saved as: {filepath}", "green"))
 
             print(termcolor.colored(f"Downloading: {video.title}", "blue"))
-            ### Na only God and ChatGPT understand this code block
             with tqdm(total=audio_stream.filesize, unit='B', unit_scale=True, ncols=100) as pbar:
                 buffer = BytesIO()
                 audio_stream.stream_to_buffer(buffer)
                 buffer.seek(0)
                 with open(file_path, 'wb') as f:
                     f.write(buffer.read())
-                    # pbar.update(audio_stream.filesize)
                     Thread(target=pbar.update, args=(audio_stream.filesize,)).start()
 
             on_complete(file_path)
@@ -173,9 +171,6 @@ class Download:
             resolution = '480p'
         if type is None:
             type = 'video'
-        # try:
-        print("Arguments: ", resolution, type, as_audio)
-
         try:
             link = "https://www.youtube.com/"+search_results[index-1]["url_suffix"]
             if as_audio:

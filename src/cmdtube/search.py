@@ -19,8 +19,6 @@ class Search:
         search = args.search
         results = args.results
 
-        # print("Search query: ", search)
-        # print("Results: ", results)
         self.search_youtube(search, results)
 
     def search_youtube(self, search_query, results):

@@ -17,8 +17,6 @@ class Watch:
             self.watch_video_from_searched(self.search_results, args.watch)
         elif isinstance(args.watch, str):
             self.watch_video(args.watch)
-
-        print("Index of the video: ", args.watch)
     
     def url_or_number(self, arg):
         if arg.isdigit():

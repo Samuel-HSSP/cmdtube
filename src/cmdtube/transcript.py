@@ -121,7 +121,6 @@ class Transcript:
                 elif transcript.language_code != lang:
                     print(termcolor.colored(f"Couldn't find an original transcript for `{lang}`!", "yellow"))
                     print(f"Translating the available transcript from `{transcript.language_code}` to `{lang}`")
-                    # print(transcript.translate(lang).fetch())
                     srt_formatted = formatter.format_transcript(transcript.translate(lang).fetch())
                     with open(f'(CMDTube)-{vid.title}.srt', 'w', encoding='utf-8') as srt_file:
                         srt_file.write(srt_formatted)
