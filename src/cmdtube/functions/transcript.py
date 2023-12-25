@@ -55,7 +55,7 @@ class Transcript:
                     srt = YouTubeTranscriptApi.list_transcripts(
                         url_suffix
                     )
-                    print("=====================================\nAvailable Transcripts\n=====================================\n", f"Video Title: {vid.title}")
+                    print("=====================================\nAvailable Transcripts\n=====================================\n", f"Video Title: {self.clean_title(vid.title)}")
                     print("\n", srt)
                 
                 transcript_list = YouTubeTranscriptApi.list_transcripts(url_suffix)
@@ -65,18 +65,18 @@ class Transcript:
                     if transcript.language_code == lang:
                         print(termcolor.colored(f"Found an original transcript for `{lang}`!", "green"))
                         srt_formatted = formatter.format_transcript(transcript.fetch())
-                        with open(f'{vid.title}.srt', 'w', encoding='utf-8') as srt_file:
+                        with open(f'(CMDTube)-{self.clean_title(vid.title)}.srt', 'w', encoding='utf-8') as srt_file:
                             srt_file.write(srt_formatted)
-                        print(termcolor.colored(f"Subtitle file saved as `(CMDTube)-{vid.title}.srt`", "green"), "\n")
+                        print(termcolor.colored(f"Subtitle file saved as `(CMDTube)-{self.clean_title(vid.title)}.srt`", "green"), "\n")
 
                     elif transcript.language_code != lang:
                         print(termcolor.colored(f"Couldn't find an original transcript for `{lang}`!", "yellow"))
                         print(f"Translating the available transcript from `{transcript.language_code}` to `{lang}`")
                         # print(transcript.translate(lang).fetch())
                         srt_formatted = formatter.format_transcript(transcript.translate(lang).fetch())
-                        with open(f'(CMDTube)-{vid.title}.srt', 'w', encoding='utf-8') as srt_file:
+                        with open(f'(CMDTube)-{self.clean_title(vid.title)}.srt', 'w', encoding='utf-8') as srt_file:
                             srt_file.write(srt_formatted)
-                        print(termcolor.colored(f"Subtitle file saved as `(CMDTube)-{vid.title}.srt`", "green"), "\n")
+                        print(termcolor.colored(f"Subtitle file saved as `(CMDTube)-{self.clean_title(vid.title)}.srt`", "green"), "\n")
 
             else:
                 print(termcolor.colored("SyntaxError: Invalid URL, please input a correct YouTube URL", "red"))
@@ -84,6 +84,12 @@ class Transcript:
         except Exception as e:
             print(termcolor.colored(f"{e}", "red"))
             print(termcolor.colored("Suggestion: Check your command and try again"))
+
+    def clean_title(self, title):
+        translation_table = str.maketrans("", "", r"/\:*?\"<>|")
+
+        cleaned_title = title.translate(translation_table)
+        return cleaned_title
 
     def video_transcript_from_searched(self, search_results, index, lang='en', list_transcripts=False):
         link = "https://www.youtube.com/"+search_results[index-1]["url_suffix"]
@@ -104,7 +110,7 @@ class Transcript:
                 srt = YouTubeTranscriptApi.list_transcripts(
                     url_suffix
                 )
-                print("=====================================\nAvailable Transcripts\n=====================================\n", f"Video Title: {vid.title}")
+                print("=====================================\nAvailable Transcripts\n=====================================\n", f"Video Title: {self.clean_title(vid.title)}")
                 print("\n", srt)
             
             transcript_list = YouTubeTranscriptApi.list_transcripts(url_suffix)
@@ -114,17 +120,17 @@ class Transcript:
                 if transcript.language_code == lang:
                     print(termcolor.colored(f"Found an original transcript for `{lang}`!", "green"))
                     srt_formatted = formatter.format_transcript(transcript.fetch())
-                    with open(f'{vid.title}.srt', 'w', encoding='utf-8') as srt_file:
+                    with open(f'(CMDTube)-{self.clean_title(vid.title)}.srt', 'w', encoding='utf-8') as srt_file:
                         srt_file.write(srt_formatted)
-                    print(termcolor.colored(f"Subtitle file saved as `(CMDTube)-{vid.title}.srt`", "green"), "\n")
+                    print(termcolor.colored(f"Subtitle file saved as `(CMDTube)-{self.clean_title(vid.title)}.srt`", "green"), "\n")
 
                 elif transcript.language_code != lang:
                     print(termcolor.colored(f"Couldn't find an original transcript for `{lang}`!", "yellow"))
                     print(f"Translating the available transcript from `{transcript.language_code}` to `{lang}`")
                     srt_formatted = formatter.format_transcript(transcript.translate(lang).fetch())
-                    with open(f'(CMDTube)-{vid.title}.srt', 'w', encoding='utf-8') as srt_file:
+                    with open(f'(CMDTube)-{self.clean_title(vid.title)}.srt', 'w', encoding='utf-8') as srt_file:
                         srt_file.write(srt_formatted)
-                    print(termcolor.colored(f"Subtitle file saved as `(CMDTube)-{vid.title}.srt`", "green"), "\n")
+                    print(termcolor.colored(f"Subtitle file saved as `(CMDTube)-{self.clean_title(vid.title)}.srt`", "green"), "\n")
 
         except Exception as e:
             print(termcolor.colored(f"{e}", "red"))

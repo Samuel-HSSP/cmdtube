@@ -46,6 +46,12 @@ class Download:
         else:
             return arg
 
+    def clean_title(self, title):
+        translation_table = str.maketrans("", "", r"/\:*?\"<>|")
+
+        cleaned_title = title.translate(translation_table)
+        return cleaned_title
+
     def download_function(
                             self,
                             video,
@@ -56,13 +62,13 @@ class Download:
                             ):
         if as_audio:
             audio_stream = video.streams.filter(only_audio=True, mime_type="audio/mp4").first()
-            file_path = os.path.join(to_path, f"(CMDTube)-{video.title}.mp3") \
-                if to_path is not None else f"(CMDTube)-{video.title}.mp3"
+            file_path = os.path.join(to_path, f"(CMDTube)-{self.clean_title(video.title)}.mp3") \
+                if to_path is not None else f"(CMDTube)-{self.clean_title(video.title)}.mp3"
 
             def on_complete(filepath):
                 print(termcolor.colored(f"Audio file saved as: {filepath}", "green"))
 
-            print(termcolor.colored(f"Downloading: {video.title}", "blue"))
+            print(termcolor.colored(f"Downloading: {self.clean_title(video.title)}", "blue"))
             with tqdm(total=audio_stream.filesize, unit='B', unit_scale=True, ncols=100) as pbar:
                 buffer = BytesIO()
                 audio_stream.stream_to_buffer(buffer)
@@ -89,13 +95,13 @@ class Download:
                     only_video=True,
                     mime_type="video/mp4").get_lowest_resolution()
 
-            file_path = os.path.join(to_path, f"(CMDTube)-{video.title}.mp4") \
-                if to_path is not None else f"(CMDTube)-{video.title}.mp4"
+            file_path = os.path.join(to_path, f"(CMDTube)-{self.clean_title(video.title)}.mp4") \
+                if to_path is not None else f"(CMDTube)-{self.clean_title(video.title)}.mp4"
 
             def on_complete(filepath):
                 print(termcolor.colored(f"Video file saved as: {filepath}", "green"))
 
-            print(termcolor.colored(f"Downloading: {video.title}.mp4", "blue"))
+            print(termcolor.colored(f"Downloading: {self.clean_title(video.title)}.mp4", "blue"))
             ### Na only God and ChatGPT understand this code block
             with tqdm(total=video_stream.filesize, unit='B', unit_scale=True, ncols=100) as pbar:
                 buffer = BytesIO()

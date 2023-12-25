@@ -3,11 +3,11 @@ import cmd, json, time, webbrowser, termcolor
 from youtube_search import YoutubeSearch
 from pytube import YouTube, Playlist
 from tqdm import tqdm
-from search import Search
-from info import Info
-from download import Download
-from transcript import Transcript
-from watch import Watch
+from cmdtube.functions.search import Search
+from cmdtube.functions.info import Info
+from cmdtube.functions.download import Download
+from cmdtube.functions.transcript import Transcript
+from cmdtube.functions.watch import Watch
 
 class cli(cmd.Cmd): #© doesn't work on the command line, so...
     intro = """
@@ -43,7 +43,7 @@ What you can do:
 4. Download a YouTube playlist
 5. Get information about a YouTube video
 6. Download a YouTube video or a whole playlist as audio
-7. Download the subtitles (transcripts/captions) for a YouTube video in almost any language.
+7. Download the subtitles (transcripts/captions) for any YouTube video in almost any language.
 
 Example:
 To search YouTube for `Python Programming Tutorials` and display 15 search results:

@@ -1,6 +1,25 @@
+[project]
+name = "cmdtube"
+version = "0.0.4"
+authors = [
+  { name="Samuel Ogunleke", email="samuelayomidehssp@gmail.com" },
+]
+description = "A command-line interface for programmers who watch YouTube tutorials"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/Samuel-HSSP/cmdtube"
+Issues = "https://github.com/Samuel-HSSP/cmdtube/issues"
+
 [build-system]
 requires = [
-    "setuptools>=42",
+    "setuptools>=61.0",
     "wheel"
 ]
 build-backend = "setuptools.build_meta"
